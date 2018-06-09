@@ -10,13 +10,13 @@
     - [Generic Specifications](#__generic-specifications__)
 - [Bonus](#bonus)
 
-<br/>
 <hr/>
+<br/>
 
 ## Very Important
 
 Once the candidate considers the test done, <br />
-Please send me your GitHub Repo to this address : [jpanetto@maltem.com](jpanetto@maltem.com)
+Please send me your GitHub Repo to this address : [jpanetto@maltem.com](mailto:jpanetto@maltem.com)
 
 ## Context
 
