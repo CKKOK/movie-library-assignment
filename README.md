@@ -28,7 +28,7 @@ You may have between 1 and 2 days to perform it !
 <br/>
 To help you in the Design of the application, you have at your disposal :
 
-- a JSON file (movies.json) containing the movie list. A movie is represented as : 
+- a JSON file (data/movies.json) containing the movie list. A movie is represented as : 
 
 ```json
 {
