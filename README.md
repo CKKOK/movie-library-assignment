@@ -1,5 +1,10 @@
 # Movie Library Assignment
 
+## Very Important
+
+Once the candidate considers the test done, <br />
+Please send me your GitHub Repo to this address : [jpanetto@maltem.com](jpanetto@maltem.com)
+
 ## Context
 
 This document contains a description and some requirements to take this assignment for Full Stack Java Developers (Angular or other Framework).
@@ -34,29 +39,44 @@ The Goal is to assert that the candidate has enough technical skills to :
 ### __Create the SpringBoot Application__
 
     1. Create a new GitHub Repository that you will send us.
-    2. Create the SpringBoot Application
-    3. You will need to access to the movies.json file (read/write) (design your code in the best way you think it should be)
-    4. You have to create a REST Controller to be able to list the movies
-    5. You have to create a REST Controller (or reuse the same, you choose) to be able to add/remove/update the list of movies
-
+    2. Create the SpringBoot Application.
+    3. You will need to access to the movies.json file (read/write) (design your code in the best way you think it should be).
+    4. You have to create a REST Controller to be able to list the movies.
+    5. You have to create a REST Controller (or reuse the same) to be able to add/remove/update the list of movies.
+    6. Each controller method will be tested individually
 
 ### __Create the Angular Single Page Application__
 
 _(If the candidate does not know Angular, use the Framework of your choice)_
     
-    1. You should use the most recent Angular version
-    2. Create the White App
-    3. Add the BootStrap Framework (most recent one too)
+    1. You should use the most recent Framework versions.
+    2. Create the White App.
+    3. Add the BootStrap Framework (most recent one too).
     4. The application should have a menu with the following elements : 
         * home
         * list of movies
-    5. The home page is just a description of the application
+    5. The home page is just a description of the application.
     6. You have to create a route to display the list of movies in a Grid. 
     7. This grid should let user to sort the elements (1 level sort is enough).
+    8. It should be allowed to add/update/delete a movie.
+    9. The user should be allowed to search a movie by title, director, release date, type.
+    9. These actions should interact with the movies.json file. To keep the state of the modifications.
 
+### __Generic Specifications___
+
+    1. Fill in the README.md file of your repo. 
+       It must explain the project but also the way to compile/build/run it.
+    2. The code needs to work after we pull and try it (no Bugs).
+    3. Organisation and Design are the keys. Design something clean and understandable.
+    4. The WebApplication should be as responsive as possible.
 
 ## __Bonus__
 
-    1. Improve the movie element to be allowed to have several directors
-    2. Create models Type, Director so that the code will be easier to understand
-    3. Create a page for authors and movie types
+    1. Improve the movie element to be allowed to have several directors.
+    2. Create models Type, Director so that the code will be easier to understand.
+    3. Create a page for authors and movie types. 
+        * Grid for the display.
+        * Possibility to update the elements.
+        * Modifications in the movies.json file.
+        * Display the list of films of a Director (on Hover to its name for example).
+    
