@@ -9,7 +9,9 @@ Please send me your GitHub Repo to this address : [jpanetto@maltem.com](jpanetto
 
 This document contains a description and some requirements to take this assignment for Full Stack Java Developers (Angular or other Framework).
 <br/>
-The application to design is a Movie Library !
+The application to design is a Movie Library ! 
+<br/>
+You may have between 1 and 2 days to perform it !
 <br/>
 To help you in the Design of the application, you have at your disposal :
 
@@ -62,7 +64,7 @@ _(If the candidate does not know Angular, use the Framework of your choice)_
     9. The user should be allowed to search a movie by title, director, release date, type.
     9. These actions should interact with the movies.json file. To keep the state of the modifications.
 
-### __Generic Specifications___
+### __Generic Specifications__
 
     1. Fill in the README.md file of your repo. 
        It must explain the project but also the way to compile/build/run it.
@@ -73,6 +75,9 @@ _(If the candidate does not know Angular, use the Framework of your choice)_
 ## __Bonus__
 
     1. Improve the movie element to be allowed to have several directors.
+        * The Business Model
+        * The GUI which displays it
+        * The GUI which allows to update/add/delete a movie.
     2. Create models Type, Director so that the code will be easier to understand.
     3. Create a page for authors and movie types. 
         * Grid for the display.
