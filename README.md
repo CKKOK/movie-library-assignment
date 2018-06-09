@@ -1,5 +1,18 @@
 # Movie Library Assignment
 
+## Table of Contents
+- [Very Important](#very-important)
+- [Context](#context)
+- [Goal](#goal)
+- [Requirements](#requirements)
+    - [Create the SpringBoot application](#__create-the-springboot-application__)
+    - [Create the Angular application](#__create-the-angular-single-page-application__)
+    - [Generic Specifications](#__generic-specifications__)
+- [Bonus](#bonus)
+
+<br/>
+<hr/>
+
 ## Very Important
 
 Once the candidate considers the test done, <br />
