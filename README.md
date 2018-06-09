@@ -38,7 +38,7 @@ To help you in the Design of the application, you have at your disposal :
   "type":"sci-fi"
 }
 ```
-
+_Date is formatted as: dd/MM/yyyy_
 
 ## Goal
 
