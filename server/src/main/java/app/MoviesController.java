@@ -26,7 +26,7 @@ public class MoviesController {
         System.out.println(this.movieDatabase.getAll().size());
     }
 
-    @RequestMapping(value="/", method=RequestMethod.GET)
+    @RequestMapping(value="", method=RequestMethod.GET)
     List<Movie> getAll(@RequestParam Map<String, String> queryParameters) {
         List<Movie> result = this.movieDatabase.getAll();
         System.out.println(queryParameters);
