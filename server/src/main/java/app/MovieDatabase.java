@@ -23,13 +23,13 @@ class Movie {
         this.id = Movie.count++;
     }
 
-    public Movie(final String title, final String director, final String releaseDate, final String type) {
-        this.id = ++Movie.count;
-        this.title = title;
-        this.director = director;
-        this.releaseDate = releaseDate;
-        this.type = type;
-    }
+    // public Movie(final String title, final String director, final String releaseDate, final String type) {
+    //     this.id = ++Movie.count;
+    //     this.title = title;
+    //     this.director = director;
+    //     this.releaseDate = releaseDate;
+    //     this.type = type;
+    // }
 
     public int getId()              {return this.id;}
     public String getTitle()        {return this.title;}
@@ -37,6 +37,7 @@ class Movie {
     public String getReleaseDate()  {return this.releaseDate;}
     public String getType()         {return this.type;}
 
+    public void setId(int id)                       {this.id = id;}
     public void setTitle(String title)              {this.title = title;}
     public void setDirector(String director)        {this.director = director;}
     public void setReleaseDate(String releaseDate)  {this.releaseDate = releaseDate;}
@@ -53,6 +54,7 @@ public class MovieDatabase {
         this.objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
         this.jsonFile = dataFile;
         this.movies = this.objectMapper.readValue(new File(this.jsonFile), new TypeReference<List<Movie>>(){});
+        this.objectMapper.writeValue(new FileOutputStream(this.jsonFile), this.movies); // This instantiates the movies' id values which are needed for accurate update/delete actions
     }
     
     public List<Movie> getAll() {
@@ -63,26 +65,66 @@ public class MovieDatabase {
         return this.movies.get(index);
     }
 
-    public void create(String title, String director, String releaseDate, String type) throws IOException {
-        Movie movie = new Movie(title, director, releaseDate, type);
+    public int create(String title, String director, String releaseDate, String type) throws IOException {
+        Movie movie = new Movie();
+        int newId = this.getNewId();
+        movie.setId(newId);
+        movie.setTitle(title);
+        movie.setDirector(director);
+        movie.setReleaseDate(releaseDate);
+        movie.setType(type);
         this.movies.add(movie);
-        // Need to write file here
         this.objectMapper.writeValue(new FileOutputStream(this.jsonFile), this.movies);
+        return newId;
     }
 
-    public void add(Movie movie) {
+    public int add(Movie movie) throws IOException  {
+        int newId = this.getNewId();
+        movie.setId(newId);
         this.movies.add(movie);
+        this.objectMapper.writeValue(new FileOutputStream(this.jsonFile), this.movies);
+        return newId;
     }
 
-    public void update(int index, Movie updatedMovie) {
-        Movie currentMovie = this.movies.get(index);
+    public void update(int id, Movie updatedMovie) throws IOException {
+        Movie currentMovie = this.findById(id);
         currentMovie.setTitle(updatedMovie.getTitle());
         currentMovie.setDirector(updatedMovie.getDirector());
         currentMovie.setReleaseDate(updatedMovie.getReleaseDate());
         currentMovie.setType(updatedMovie.getType());
+        this.objectMapper.writeValue(new FileOutputStream(this.jsonFile), this.movies);
     }
 
-    public void delete(int index) {
-        this.movies.remove(index);
+    public void delete(int id) throws IOException {
+        for (int i = 0; i < this.movies.size(); i++) {
+            if (this.movies.get(i).getId() == id) {
+                this.movies.remove(i);
+                break;
+            }
+        }
+        this.objectMapper.writeValue(new FileOutputStream(this.jsonFile), this.movies);
+    }
+
+    private Movie findById(int id) {
+        Movie result = null;
+        for (int i = 0; i < this.movies.size(); i++) {
+            result = this.movies.get(i);
+            if (result.getId() == id) {
+                break;
+            }
+        }
+        return result;
+    }
+
+    private int getNewId() {
+        int result = 0;
+        Movie current = null;
+        for (int i = 0; i < this.movies.size(); i++) {
+            current = this.movies.get(i);
+            if (current.getId() >= result) {
+                result = current.getId() + 1;
+            };
+        };
+        return result;
     }
 }
