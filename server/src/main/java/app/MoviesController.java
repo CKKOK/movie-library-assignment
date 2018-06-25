@@ -21,10 +21,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class MoviesController {
     private final MovieDatabase movieDatabase;
     
-    @Autowired
+    @Autowired // Nothing's going on here because well, this thing isn't an actual database...
     public MoviesController(MovieDatabase movieDatabase) {
         this.movieDatabase = movieDatabase;
-        System.out.println(this.movieDatabase.getAll().size());
     }
 
     @RequestMapping(value="", method=RequestMethod.GET)

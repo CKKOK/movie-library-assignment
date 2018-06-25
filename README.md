@@ -20,7 +20,7 @@ This application consists of a front-end running on Angular 6 as well as a back-
 
 ### Running in development environment
 1. In the `client` subfolder, run `npm install` to install the necessary dependencies.
-2. The back-end server has been pre-compiled and can be run by going to the `server/target` directory and running `java -jar movielibrary-0.1.0.jar`. Should you wish to compile it after amendments, run `mvn package -f "./pom.xml"` in the `server` directory.
+2. The back-end server has been pre-compiled and can be run by going to the `server/target` directory and running `java -jar movielibrary-0.1.0.jar`. Should you wish to compile it after amendments, run `mvn package -f "./pom.xml"` in the `server` directory. Java 8 and above is required for this.
 3. Start the front-end server by going to the `client` directory and running `ng serve`.
 4. Go to `http://localhost:4200` to view the application.
 

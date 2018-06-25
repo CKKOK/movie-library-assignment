@@ -23,14 +23,6 @@ class Movie {
         this.id = Movie.count++;
     }
 
-    // public Movie(final String title, final String director, final String releaseDate, final String type) {
-    //     this.id = ++Movie.count;
-    //     this.title = title;
-    //     this.director = director;
-    //     this.releaseDate = releaseDate;
-    //     this.type = type;
-    // }
-
     public int getId()              {return this.id;}
     public String getTitle()        {return this.title;}
     public String getDirector()     {return this.director;}
